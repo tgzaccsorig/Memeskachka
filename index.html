@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MemeVault 1000+</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d12;--panel:#131722;--line:#282d3b;--text:#f4f5fa;--muted:#9ca4b7;--purple:#8b5cf6;--cyan:#22d3ee;--green:#9af0b2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0%,#25194b 0,transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1050px;margin:auto;padding:26px 18px 50px}.nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:54px}.brand{font-weight:900;letter-spacing:-.04em;font-size:20px}.brand span{color:var(--cyan)}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;color:var(--muted);font-size:12px}
+.hero{max-width:760px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}h1{font-size:clamp(42px,8vw,76px);line-height:.99;letter-spacing:-.065em;margin:18px 0 18px}h1 em{font-style:normal;color:var(--cyan)}.lead{color:var(--muted);font-size:17px;line-height:1.65;max-width:620px}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:36px}.card{background:rgba(19,23,34,.92);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 20px 70px #0002}.card h2{font-size:17px;margin:0 0 18px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}.stat{background:#0d111a;border:1px solid var(--line);padding:13px;border-radius:15px}.stat b{display:block;font-size:21px;letter-spacing:-.04em}.stat small{display:block;color:var(--muted);font-size:11px;margin-top:5px}.button{width:100%;border:0;border-radius:15px;padding:17px 20px;font-size:16px;font-weight:800;color:#090b12;background:linear-gradient(100deg,var(--cyan),#a5f3fc);cursor:pointer;box-shadow:0 8px 30px #22d3ee22;transition:transform .15s,filter .15s}.button:hover{transform:translateY(-2px);filter:brightness(1.05)}.button:disabled{opacity:.55;cursor:wait;transform:none}.note{font-size:12px;color:var(--muted);line-height:1.55;margin:14px 0 0}.status{display:none;margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--muted);font-size:13px;line-height:1.5}.status.show{display:block}.status.error{color:#fecaca;border-color:#7f1d1d}.steps{display:grid;gap:17px}.step{display:flex;gap:13px}.num{width:34px;height:34px;flex:0 0 34px;border-radius:11px;background:#25203d;color:#c4b5fd;display:grid;place-items:center;font-weight:800}.step b{display:block;font-size:14px;margin:1px 0 5px}.step p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}.source{margin-top:18px;padding:13px;border-radius:14px;background:#0d111a;border:1px solid var(--line);font-size:12px;color:var(--muted);line-height:1.6}.source strong{color:var(--text)}footer{color:#6f778a;font-size:11px;line-height:1.6;margin-top:24px;text-align:center}a{color:var(--cyan)}@media(max-width:720px){.nav{margin-bottom:38px}.layout{grid-template-columns:1fr}.card{padding:20px}.stats{gap:7px}.stat{padding:11px 9px}.stat b{font-size:18px}}
+</style>
+</head>
+<body>
+<main>
+<div class="nav"><div class="brand">Meme<span>Vault</span> <span style="color:#858da2">1000+</span></div><div class="pill">OPEN MEDIA EDITION</div></div>
+<section class="hero">
+<div class="eyebrow"><span class="dot"></span> Твоя коллекция офлайн</div>
+<h1>Мемы. Ролики.<br><em>Без интернета.</em></h1>
+<p class="lead">Собери архив коротких видео из открытых источников. Скачай ZIP, распакуй на телефоне — и смотри, даже когда сети нет.</p>
+</section>
+<section class="layout">
+<div class="card">
+<h2>Твоя подборка</h2>
+<div class="stats"><div class="stat"><b>1000</b><small>видео максимум</small></div><div class="stat"><b>480p*</b><small>цель по качеству</small></div><div class="stat"><b>ZIP</b><small>один архив</small></div></div>
+<button id="download" class="button">↓ &nbsp; Собрать и скачать ZIP</button>
+<div id="status" class="status"></div>
+<p class="note">* Источник отдаёт оригинальные файлы: сайт не может гарантировать 480p или MP4 для каждого ролика без перекодирования. Размер архива и число найденных видео зависят от доступных открытых файлов.</p>
+<div class="source"><strong>Источник:</strong> Wikimedia Commons — свободные медиафайлы. Это не гарантированная подборка вирусных мемов; некоторые результаты могут быть обычными видео или иметь другие форматы.</div>
+</div>
+<div class="card">
+<h2>Как это работает</h2>
+<div class="steps">
+<div class="step"><div class="num">1</div><div><b>Нажми кнопку</b><p>Сервер ищет видеофайлы в открытом медиакаталоге.</p></div></div>
+<div class="step"><div class="num">2</div><div><b>Дождись ZIP</b><p>Подходящие файлы добавляются в архив вместе с заметками об источниках и лицензиях.</p></div></div>
+<div class="step"><div class="num">3</div><div><b>Распакуй на Redmi</b><p>Открой «Загрузки» в файловом менеджере, распакуй архив и проверь папку с видео.</p></div></div>
+</div>
+<div class="source"><strong>Важно:</strong> генерация архива требует работающего сервера с доступом к Wikimedia Commons. Этот интерфейс сам по себе не размещён в интернете — его нужно развернуть вместе с backend.</div>
+</div>
+</section>
+<footer>Не связан с TikTok, YouTube, Likee или Instagram. Проверяй лицензии и условия использования каждого файла. Бесплатный проект с открытым исходным кодом.</footer>
+</main>
+<script>
+const button = document.getElementById('download');
+const statusBox = document.getElementById('status');
+button.addEventListener('click', async () => {
+  button.disabled = true;
+  button.textContent = '⏳ Подготавливаем архив…';
+  statusBox.className = 'status show';
+  statusBox.textContent = 'Подключаемся к серверу. Для скачивания настоящих файлов сайт должен быть развёрнут с backend.';
+  try {
+    const response = await fetch('/api/build', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({count: 1000})
+    });
+    if (!response.ok) {
+      let message = 'Не удалось собрать архив.';
+      try { const data = await response.json(); if (data.error) message = data.error; } catch (_) {}
+      throw new Error(message);
+    }
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'MemeVault_open_videos.zip';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    statusBox.textContent = 'Загрузка архива началась. Проверь папку «Загрузки».';
+  } catch (error) {
+    statusBox.className = 'status show error';
+    statusBox.textContent = error.message || 'Сервер не найден. Разверни backend из проекта и попробуй снова.';
+  } finally {
+    button.disabled = false;
+    button.textContent = '↓  Собрать и скачать ZIP';
+  }
+});
+</script>
+</body>
+</html>
